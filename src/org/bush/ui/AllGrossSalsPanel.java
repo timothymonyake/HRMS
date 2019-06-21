@@ -46,7 +46,7 @@ public class AllGrossSalsPanel extends JPanel
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel();
         jl = new JLabel("All employees gross salaries");
-        jl.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,20));
+        jl.setFont(new Font(Font.SANS_SERIF,Font.BOLD,20));
         jp1.add(jl);
         JPanel jp1In = new JPanel(new FlowLayout());
         jtf = new JTextField();

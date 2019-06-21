@@ -30,7 +30,7 @@ public class AllFemaleEmpsPanel extends JPanel
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel(new FlowLayout());
         jl = new JLabel("List of all female employees");
-        jl.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,20));
+        jl.setFont(new Font(Font.SANS_SERIF,Font.BOLD,20));
         jp1.add(jl);
         JPanel jp2 = new JPanel();
         JPanel jp3 = new JPanel();

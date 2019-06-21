@@ -27,8 +27,7 @@ public class OverViewPanel extends JPanel
         readme = getReadMe();
   
         JLabel jl = new JLabel("APPLICATION OVERVIEW");
-        Font f1 = new Font(Font.DIALOG_INPUT,Font.BOLD,30);
-        jl.setFont(f1);
+        jl.setFont(new Font(Font.SANS_SERIF,Font.BOLD,20));
         pn1 = new JPanel();
         pn2 = new JPanel();
         pn3 = new JPanel();
