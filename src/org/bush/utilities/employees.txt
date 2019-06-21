@@ -1,0 +1,50 @@
+1,michael,keane,01-01-1983,male,Gaborone,marketing executive,01-01-2015,marketing,40,45.37,3,0.00,0.01,0.12
+2,boago,lesole,04-02-1975,male,Gaborone,marketing executive,01-01-2015,marketing,40,45.37,4,0.00,0.01,0.12
+3,lucy,lynn,01-11-1953,female,Gaborone,marketing executive,01-01-2001,marketing,40,45.37,4,0.00,0.01,0.12
+4,lionel ,jack,20-10-1977,male,Gaborone,marketing executive,01-01-2010,marketing,40,45.37,3,0.00,0.01,0.12
+5,matty,olsen,01-11-1955,female,Gaborone,marketing executive,01-01-2016,marketing,40,45.37,1,0.00,0.01,0.12
+6,oprah,stam,20-10-1970,female,Lobatse,marketing executive,01-01-2005,marketing,40,45.37,5,0.00,0.01,0.12
+7,dwight,best,01-09-1983,male,Jwaneng,marketing executive,01-01-2018,marketing,40,45.37,1,0.00,0.01,0.12
+8,boitumelo,tram,20-12-1990,female,Francistown,marketing executive,21-12-2001,marketing,40,45.37,2,0.00,0.01,0.12
+9,andres,mpedi,07-02-1993,male,Palapye,marketing executive,31-11-1991,marketing,40,45.37,2,0.00,0.01,0.12
+10,kessy,digawa,01-11-1955,female,Francistown,marketing executive,01-01-2005,marketing,40,45.37,2,0.00,0.01,0.12
+11,ellisa,rob,19-10-1953,female,Mochudi,marketing executive,11-10-1999,marketing,40,45.37,2,0.00,0.01,0.12
+12,mogomotsi,care,21-03-1823,male,Gaborone,marketing executive,31-11-1991,marketing,40,45.37,2,0.00,0.01,0.12
+13,thuso,phalaza,07-02-1893,male,Gaborone,marketing executive,11-04-2015,marketing,40,45.37,5,0.00,0.01,0.12
+14,gabriel,noko,12-10-1993,male,Jwaneng,marketing executive,01-20-2010,marketing,40,45.37,2,0.00,0.01,0.12
+15,lorato,bakes,23-01-1983,female,Lobatse,marketing executive,07-07-1997,marketing,40,45.37,3,0.00,0.01,0.12
+16,mothowaModimo,sedimo,23-01-1978,male,Gaborone,marketing executive,22-11-1998,marketing,40,45.37,3,0.00,0.01,0.12
+17,cedric,bakamp,29-01-1976,male,Serowe,marketing executive,19-10-2013,marketing,40,45.37,2,0.00,0.01,0.12
+18,zamar,andros,24-10-1946,male,Kasane,marketing executive,27-09-2006,marketing,40,45.37,1,0.00,0.01,0.12
+19,cris,bokae,01-11-1989,male,Selibe Phikwe,marketing executive,01-01-2017,marketing,40,45.37,2,0.00,0.01,0.12
+20,lebo,mokeno,31-03-1995,female,Palapye,marketing executive,01-01-2019,marketing,40,45.37,1,0.00,0.01,0.12
+21,kago,tsisa,11-07-1943,male,Orapa,marketing executive,01-01-2005,marketing,40,45.37,3,0.00,0.01,0.12
+22,joel,svanks,01-12-1955,male,Jwaneng,marketing executive,29-01-2005,marketing,40,45.37,1,0.00,0.01,0.12
+23,xavi,mornals,01-02-1999,male,Orapa,marketing executive,01-02-2019,marketing,40,45.37,3,0.00,0.01,0.12
+24,sadi,loyals,30-05-1978,male,Lobatse,marketing executive,27-12-2006,marketing,40,45.37,1,0.00,0.01,0.12
+25,lehlonolo,bareetsi,01-02-1939,male,Gaborone,marketing manager,01-01-1979,marketing,40,56.35,5,0.30,0.05,0.12
+26,gifty,chetr,04-02-1975,male,Gaborone,sales support staff,31-10-1991,sales,40,23.65,5,0.15,0.02,0.12
+27,tumi,forker,07-08-1989,female,Palapye,sales support staff,31-10-2001,sales,40,23.65,5,0.15,0.02,0.12
+28,themba,foiler,09-01-1983,male,Gaborone,sales support staff,01-01-2003,sales,40,23.65,5,0.15,0.02,0.12
+29,segolame,baeer,21-02-1978,male,Jwaneng,ICT support staff,01-01-2001,ICT,40,54.99,5,0.15,0.02,0.12
+30,dominic,mod,04-02-1975,male,Kasane,ICT support staff,31-11-1995,ICT,40,54.99,5,0.15,0.02,0.12
+31,keitumetse,maeba,01-09-1983,female,Lobatse,ICT support staff,21-12-2001,ICT,40,54.99,5,0.15,0.02,0.12
+32,pogba,tomiinay,17-12-1993,male,Gaborone,driver,01-01-2018,drivers,40,16.75,3,0.15,0.02,0.12
+33,jesse jr,marcus,15-12-1996,female,Gaborone,driver,20-11-2010,drivers,40,16.75,5,0.15,0.02,0.12
+34,thato,dijo,21-09-1983,female,Selibe Phikwe,tour operator,30-01-2002,tour operators,40,18.99,3,0.15,0.02,0.12
+35,jason,friday,24-08-1979,male,Gaborone,tour operator,25-02-1994,tour operators,40,18.99,5,0.15,0.02,0.12
+36,dudu,debelans,01-11-1983,female,Orapa,human resource officer,31-11-1991,HR,40,40.15,3,0.15,0.02,0.12
+37,trey,dipina,01-11-1955,male,Jwaneng,human resource officer,17-08-2015,HR,40,40.15,5,0.15,0.02,0.12
+38,lesenya,boy,29-03-1989,male,Francistown,human resource officer,31-11-1989,HR,40,40.15,5,0.15,0.02,0.12
+39,bush,koko,01-01-1983,male,Gaborone,human resource officer,12-09-1997,HR,40,40.15,5,0.15,0.02,0.12
+40,josephine,mark,01-11-1955,female,Gaborone,human resource manager,20-12-2005,HR,40,57.25,5,0.30,0.05,0.12
+41,thea,hors,23-02-1989,female,Palapye,accounts officer,01-01-2012,accounts,40,55.75,5,0.15,0.02,0.12
+42,laone,loks,01-01-1983,female,Mochudi,accounts officer,01-01-2010,accounts,40,55.75,3,0.15,0.02,0.12
+43,kabo,letsogo,01-09-1983,male,Gaborone,accounts officer,01-01-2003,accounts,40,55.75,1,0.15,0.02,0.12
+44,martha,wayde,14-06-1976,female,Francistown,accounts officer,01-01-2005,accounts,40,55.75,5,0.15,0.02,0.12
+45,hulk,morgs,29-12-1984,male,Serowe,finance manager,13-04-2005,accounts,40,61.10,3,0.30,0.05,0.12
+46,marang,lesto,10-12-1971,female,Gaborone,temp staff,31-11-1990,sales,40,21.75,1,0.15,0.00,0.12
+47,akhona,onerly,01-07-1987,female,Mochudi,temp staff,01-01-2010,sales,40,21.75,5,0.15,0.00,0.12
+48,george,karas,23-07-1993,male,Serowe,temp staff,01-01-2014,sales,40,21.75,5,0.15,0.00,0.12
+49,dunga,keols,01-09-1973,male,Gaborone,temp staff,31-11-1991,sales,40,21.75,5,0.15,0.00,0.12
+50,bogosi,filos,04-02-1975,male,Kasane,CEO,01-01-2005,management,40,85.75,0,0.30,0.05,0.12
