@@ -35,8 +35,7 @@ public class AboutPanel extends JPanel
             jl3 = new JLabel("Copyright 2019 Ver 1.00");
             jl3.setFont(new Font(Font.SERIF,Font.PLAIN,13));
         jp3.add(jl3);
-        add(jp3,BorderLayout.SOUTH);
-       
+        add(jp3,BorderLayout.SOUTH);       
     }
 
 }

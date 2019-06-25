@@ -54,7 +54,8 @@ public class Utilities {
             jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int status = jfc.showOpenDialog(jfc); //returns 0 if file selected , and 1 if cancel or exit button pressed!
             
-            if(status==0)
+           //approve / cancel / error
+            if(status==JFileChooser.)
             {
                 JOptionPane.showMessageDialog(null,"Success","File read Successfully",JOptionPane.INFORMATION_MESSAGE);
             }          

@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bush.ui.*;
 import org.bush.utilities.*;
+
 /**
  *@author Timothy Segolame Monyake
  *@version 1.00    
@@ -25,10 +26,17 @@ AllEmpsNetSalsPanel allNetSalsPanel;
 AllGrossSalsPanel allGrossSalsPanel;
 AboutPanel aboutPanel;
 List<Employee> emplist;
+JRadioButton jrb1,jrb2,jrb3;
+ButtonGroup bg;
+String linuxUI = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+String JavaUI = "javax.swing.plaf.metal.MetalLookAndFeel";
+String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
     
     public MainClass() throws IOException
     {
+      
         emplist = new ArrayList<>();
+        
         //menus
         JMenuBar jmb = new JMenuBar();
         //create and add menus to menu bar
@@ -41,6 +49,23 @@ List<Employee> emplist;
         jmb.add(jm2);
         jmb.add(jm4);
         JMenuItem jmi9 = new JMenuItem("About");
+        //rb
+        //setTheme();
+        jrb1 = new JRadioButton("linux");
+        jrb2 = new JRadioButton("windows");
+        jrb3 = new JRadioButton("java",true);
+        bg =new ButtonGroup();
+        bg.add(jrb1);
+        bg.add(jrb2);
+        bg.add(jrb3);
+        
+     
+        
+        jm4.add(jrb1);
+        jm4.add(jrb2);
+        jm4.add(jrb3);
+        
+        
         jm4.add(jmi9);
         ///create and add menu items to menus
         JMenuItem jmi1 = new JMenuItem("Open file");
@@ -94,6 +119,26 @@ List<Employee> emplist;
         }
         
         /*action listeners*/
+        jrb1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) { 
+                setLinuxUI(e);
+             }
+        });
+        
+        jrb2.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) { 
+                setWindowsUI(e);
+             }
+        });
+        
+        jrb3.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) { 
+                setJavaUI(e);
+             }
+        });
         
         
       
@@ -200,7 +245,57 @@ List<Employee> emplist;
        fr.setLocationRelativeTo(null);
        fr.setVisible(true);
        fr.add(jp); 
-       //fr.remove(JFrame.);
-       
+       //fr.remove(JFrame.);      
    }
+   public void setLinuxUI(ActionEvent e)
+   {
+       try{UIManager.setLookAndFeel(linuxUI);}
+                catch(Exception ex)
+                {      
+                    JOptionPane.showMessageDialog(null,"error setting linux theme","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                SwingUtilities.updateComponentTreeUI(this);
+   }
+   
+   public void setWindowsUI(ActionEvent e)
+   {
+       try{UIManager.setLookAndFeel(WindowsUI);}
+                catch(Exception ex)
+                {      
+                    JOptionPane.showMessageDialog(null,"error setting windows theme","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                SwingUtilities.updateComponentTreeUI(this);       
+   }
+       
+   
+    public void setJavaUI(ActionEvent e)
+   {
+       try{UIManager.setLookAndFeel(JavaUI);}
+                catch(Exception ex)
+                {      
+                    JOptionPane.showMessageDialog(null,"error setting theme","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                SwingUtilities.updateComponentTreeUI(this);       
+   }
+    
+        
+        
+       
+       /*
+       try{       
+        final String LINUX = "linux";final String WINDOWS = "windows";final String MACINTOSH = "macintosh";
+        String os_name_key = "os.name";
+        String os = System.getProperty(os_name_key);
+        System-if(os.equalsIgnoreCase(LINUX))
+        {UIManager.setLookAndFeel(linuxUI);
+        }else if(os.equalsIgnoreCase(WINDOWS))
+        {UIManager.setLookAndFeel(WINDOWS);
+        }else
+        {UIManager.setLookAndFeel(MACINTOSH);
+        }UIManager.setLookAndFeel(theme);//sets the supplied look and feel
+        SwingUtilities.updateComponentTreeUI(this); //updates all components that have been created
+       }catch(Exception e)
+       {}*/
+      
+   
 }
