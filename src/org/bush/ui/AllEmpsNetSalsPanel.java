@@ -29,8 +29,8 @@ public class AllEmpsNetSalsPanel extends JPanel
     JLabel jl;
     JScrollPane jsp;
     JPanel jp1,jp2,jp3,jp4;
-    List<Employee> emplist;
-    public AllEmpsNetSalsPanel() throws IOException
+    
+    public AllEmpsNetSalsPanel(List<Employee> emplist) throws IOException
     {
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel(new FlowLayout());
@@ -46,16 +46,15 @@ public class AllEmpsNetSalsPanel extends JPanel
         add(jp3,BorderLayout.EAST);
         add(jp4,BorderLayout.WEST);
   
-        displayNetSalaries();
+        displayNetSalaries(emplist);
         add(jsp,BorderLayout.CENTER);        
     }
     
-    public void displayNetSalaries() throws IOException
+    public void displayNetSalaries(List<Employee> emplist) throws IOException
     {
         jt = new JTable();
         jsp  =new JScrollPane(jt);
-        Utilities ut = new Utilities();
-        emplist = ut.getList();
+     //   emplist = Utilities.getList();
         DefaultTableModel md = (DefaultTableModel) jt.getModel();
         jt.setModel(md);
                 

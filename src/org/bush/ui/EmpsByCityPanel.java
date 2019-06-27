@@ -29,8 +29,8 @@ public class EmpsByCityPanel extends JPanel
     JLabel jl;
     JScrollPane jsp;
     JPanel jp1,jp2,jp3,jp4;
-    List<Employee> emplist;
-    public EmpsByCityPanel() throws IOException
+ 
+    public EmpsByCityPanel(List<Employee> emplist) throws IOException
     {
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel(new FlowLayout());
@@ -46,19 +46,17 @@ public class EmpsByCityPanel extends JPanel
         add(jp3,BorderLayout.EAST);
         add(jp4,BorderLayout.WEST);
   
-        displayEmpsbyCity();
+        displayEmpsbyCity(emplist);
         add(jsp,BorderLayout.CENTER);         
     }
     
-    public void displayEmpsbyCity() throws IOException
+    public void displayEmpsbyCity(List<Employee> emplist) throws IOException
     {
             jt = new JTable();
             jsp = new JScrollPane(jt);
             DefaultTableModel md = (DefaultTableModel) jt.getModel();
-            jt.setModel(md);
-            Utilities ut = new Utilities();
-            emplist = ut.getList();
-        
+            jt.setModel(md);          
+            //emplist = Utilities.getList();        
             md.addColumn("City");
             md.addColumn("Number of Employees");
                      

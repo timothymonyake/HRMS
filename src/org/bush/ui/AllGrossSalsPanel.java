@@ -36,12 +36,11 @@ public class AllGrossSalsPanel extends JPanel
     JLabel jl;
     JScrollPane jsp;
     JPanel jp1,jp2,jp3,jp4;
-    List<Employee> emplist;
     JButton jb;
     JTextField jtf;
     TableRowSorter sorter;
     
-    public AllGrossSalsPanel() throws IOException
+    public AllGrossSalsPanel( List<Employee> emplist) throws IOException
     {
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel();
@@ -65,7 +64,7 @@ public class AllGrossSalsPanel extends JPanel
         add(jp3,BorderLayout.EAST);
         add(jp4,BorderLayout.WEST);
   
-        displayGrossSalaries();        
+        displayGrossSalaries(emplist);        
         add(jsp,BorderLayout.CENTER);  
 
 
@@ -78,12 +77,10 @@ public class AllGrossSalsPanel extends JPanel
         });
     }
     
-    public void displayGrossSalaries() throws IOException
+    public void displayGrossSalaries( List<Employee> emplist) throws IOException
     {
         jt = new JTable();
         jsp  =new JScrollPane(jt);
-        Utilities ut = new Utilities();
-        emplist = ut.getList();
         DefaultTableModel md = (DefaultTableModel) jt.getModel();
         jt.setModel(md);
          md.addColumn("FIRSTNAME");md.addColumn("LASTNAME");md.addColumn("TAX TO BE PAID (BWP)");md.addColumn("GROSS SALARY (BWP)");

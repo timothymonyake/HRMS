@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bush.ui.*;
 import org.bush.utilities.*;
 
@@ -17,13 +15,14 @@ import org.bush.utilities.*;
  */
 public class MainClass extends JFrame{
 Container pane;
+Utilities ut;
 CardLayout layout;
 AllEmpsPanel allempsPanel;
-OverViewPanel ovvPanel;
-AllFemaleEmpsPanel allfemalePanel;
-EmpsByCityPanel empsByCityPanel;
-AllEmpsNetSalsPanel allNetSalsPanel;
 AllGrossSalsPanel allGrossSalsPanel;
+AllEmpsNetSalsPanel allEmpsNetSalsPanel;
+AllFemaleEmpsPanel allFemaleEmpsSalsPanel;
+OverViewPanel ovvPanel;
+EmpsByCityPanel empsByCityPanel;
 AboutPanel aboutPanel;
 List<Employee> emplist;
 JRadioButton jrb1,jrb2,jrb3;
@@ -33,10 +32,7 @@ String JavaUI = "javax.swing.plaf.metal.MetalLookAndFeel";
 String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
     
     public MainClass() throws IOException
-    {
-      
-        emplist = new ArrayList<>();
-        
+    {   emplist = new ArrayList<>();        
         //menus
         JMenuBar jmb = new JMenuBar();
         //create and add menus to menu bar
@@ -49,7 +45,6 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
         jmb.add(jm2);
         jmb.add(jm4);
         JMenuItem jmi9 = new JMenuItem("About");
-        //rb
         //setTheme();
         jrb1 = new JRadioButton("linux");
         jrb2 = new JRadioButton("windows");
@@ -58,9 +53,7 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
         bg.add(jrb1);
         bg.add(jrb2);
         bg.add(jrb3);
-        
-     
-        
+  
         jm4.add(jrb1);
         jm4.add(jrb2);
         jm4.add(jrb3);
@@ -95,24 +88,13 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
         layout = new CardLayout(); 
         setLayout(layout);
         /*init external panels and add them to content pane*/
+   
         ovvPanel= new OverViewPanel();
-        allempsPanel = new AllEmpsPanel();
-        allfemalePanel = new AllFemaleEmpsPanel();
-        empsByCityPanel =new EmpsByCityPanel();
-        allNetSalsPanel = new AllEmpsNetSalsPanel();
-        allGrossSalsPanel = new AllGrossSalsPanel();
         aboutPanel =new AboutPanel();
-
-            
-        //displays the first component(and or window) added to it
+       //displays the first component(and or window) added to it
         pane.add("overview",ovvPanel); //main card (opens when the app starts)
-        pane.add("all_female",allfemalePanel);
-        pane.add("by_city",empsByCityPanel);
-        pane.add("net_salaries",allNetSalsPanel);
-        pane.add("gross_salaries",allGrossSalsPanel);
-      
-        
-        /* no view menuitem should be enabled util file loaded */
+  
+        /* no menuitem should be enabled util file loaded */
            if(emplist.isEmpty())
         {
             jm2.setEnabled(false);           
@@ -124,15 +106,13 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
             public void actionPerformed(ActionEvent e) { 
                 setLinuxUI(e);
              }
-        });
-        
+        });        
         jrb2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) { 
                 setWindowsUI(e);
              }
-        });
-        
+        });        
         jrb3.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) { 
@@ -140,53 +120,25 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
              }
         });
         
-        
-      
-        
         jmi1.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    openFile(e);
+                    openFile(e);                  
                     jm2.setEnabled(true); 
                 } catch (IOException ex) {
                    JOptionPane.showMessageDialog(null,ex,"Error opening file",JOptionPane.ERROR_MESSAGE);
                    jm2.setEnabled(false); 
-                }                                      
+                }   
+                try {  
+                    initAddPanels();
+                } catch (IOException ex) {
+                     JOptionPane.showMessageDialog(null,ex,"Error opening file",JOptionPane.ERROR_MESSAGE);
+                }
              }    
         });
            
-       
-        
-        jmi3.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                layout.show(pane, "gross_salaries");
-            }
-        
-        });
-        
-        jmi5.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                layout.show(pane,"all_female");
-             }
-        });
-        
-        jmi6.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                layout.show(pane, "by_city");
-            }
-        });
-        
-        jmi7.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                layout.show(pane, "net_salaries");
-            }
-        });
-        
+    
          jmi8.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -198,6 +150,34 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
             @Override
             public void actionPerformed(ActionEvent e) {
                 displayAbout(aboutPanel); 
+             }
+         });
+         
+          jmi3.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.show(pane,"gross_panel"); 
+             }
+         });
+          
+           jmi7.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.show(pane,"net_panel"); 
+             }
+         });
+           
+           jmi5.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               layout.show(pane,"female_panel");
+             }
+         });
+         
+            jmi6.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.show(pane,"city_panel");
              }
          });
          
@@ -219,12 +199,28 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
       frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frm.setLocationRelativeTo(null);
       frm.setVisible(true);
+      
+    }
+    
+    public void  initAddPanels() throws IOException
+    {
+        emplist = ut.getList();   
+        //all non-def constructors will be passed a list of type employee so that the tables are drawn in respective classes!
+        allEmpsNetSalsPanel = new AllEmpsNetSalsPanel(emplist);
+        allGrossSalsPanel = new AllGrossSalsPanel(emplist);
+        empsByCityPanel = new EmpsByCityPanel(emplist);
+        allFemaleEmpsSalsPanel = new AllFemaleEmpsPanel(emplist);
+        allempsPanel = new AllEmpsPanel(emplist);
+        //add panels to the Container pane
+        pane.add("city_panel",empsByCityPanel); 
+        pane.add("gross_panel",allGrossSalsPanel);
+        pane.add("net_panel",allEmpsNetSalsPanel);
+        pane.add("female_panel",allFemaleEmpsSalsPanel);
     }
     
    public void openFile(ActionEvent e) throws IOException
    {
-       Utilities ut = new Utilities();
-       emplist =  ut.getList(); //getList returns an arraylist of type Employee
+       ut = new Utilities();       
    } 
     
    public void showAllRecords(JPanel jp)
@@ -245,8 +241,8 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
        fr.setLocationRelativeTo(null);
        fr.setVisible(true);
        fr.add(jp); 
-       //fr.remove(JFrame.);      
    }
+   /*set themes - action events for radio buttons*/
    public void setLinuxUI(ActionEvent e)
    {
        try{UIManager.setLookAndFeel(linuxUI);}
@@ -277,25 +273,5 @@ String WindowsUI = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
                 }
                 SwingUtilities.updateComponentTreeUI(this);       
    }
-    
-        
-        
-       
-       /*
-       try{       
-        final String LINUX = "linux";final String WINDOWS = "windows";final String MACINTOSH = "macintosh";
-        String os_name_key = "os.name";
-        String os = System.getProperty(os_name_key);
-        System-if(os.equalsIgnoreCase(LINUX))
-        {UIManager.setLookAndFeel(linuxUI);
-        }else if(os.equalsIgnoreCase(WINDOWS))
-        {UIManager.setLookAndFeel(WINDOWS);
-        }else
-        {UIManager.setLookAndFeel(MACINTOSH);
-        }UIManager.setLookAndFeel(theme);//sets the supplied look and feel
-        SwingUtilities.updateComponentTreeUI(this); //updates all components that have been created
-       }catch(Exception e)
-       {}*/
-      
-   
+
 }

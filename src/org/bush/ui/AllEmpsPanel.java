@@ -16,10 +16,8 @@ public class AllEmpsPanel extends JPanel
     JLabel jl;
     JTable jt;
     JScrollPane jsp;
-    List<Employee> emplist;
-    
-
-    public AllEmpsPanel() throws IOException
+  
+    public AllEmpsPanel(List<Employee> emplist) throws IOException
     {
         setLayout(new BorderLayout(3,10));
         JPanel jp1 = new JPanel();
@@ -36,13 +34,13 @@ public class AllEmpsPanel extends JPanel
         //jp.add(jl);
         //add(jp,BorderLayout.NORTH);   
         
-        displayTable();
+        displayTable(emplist);
         add(jsp,BorderLayout.CENTER);
        
     }    
     
     
-    public void displayTable() throws IOException
+    public void displayTable(List<Employee> emplist) throws IOException
     {
         jt = new JTable();
         DefaultTableModel md = (DefaultTableModel) jt.getModel();
@@ -52,10 +50,7 @@ public class AllEmpsPanel extends JPanel
         md.addColumn("id");md.addColumn("firstname");md.addColumn("lastname");md.addColumn("gender");md.addColumn("city");md.addColumn("date hired");
         md.addColumn("department");md.addColumn("hours worked p/w");md.addColumn("pay rate");md.addColumn("leave");md.addColumn("car allwnce");md.addColumn("monthly gratuity");
         md.addColumn("tax");
-        
-        Utilities ut = new Utilities();
-        emplist = ut.getList();
-        
+       
         Object[] rowData = new Object[emplist.size()];
         for(int i=0;i<emplist.size();i++)
         {

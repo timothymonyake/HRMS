@@ -13,11 +13,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class Utilities {
-    BufferedReader br = null;
-    FileReader fr = null;
-    File f = null;
-    String lineRead;
-    List<Employee> emplist ;
+    static BufferedReader br = null;
+    static FileReader fr = null;
+    static File f = null;
+    static String lineRead;
+    static List<Employee> emplist ;
     static ArrayList<String> readme;
    
    
@@ -31,50 +31,38 @@ public class Utilities {
        
        try
        {
-           /*
-            STATIC FILE VALUES
-            f = new File("PATH"); //locates the file in the specified path
-            fr = new FileReader(f);
-            br = new BufferedReader(fr);*/
-           
-           /*
+                
             //dynamic file reading using jfc 
             JFileChooser jfc = new JFileChooser();
             jfc.setDialogType(JFileChooser.OPEN_DIALOG);
             jfc.setDialogTitle("Open the employee database text file");            
-            //get the system property
-            String os_name_key = "os.name";
-            String os = System.getProperty(os_name_key);            
-                       
-            if(os.equalsIgnoreCase("linux"))
-            {
+           
                 File lin_dir = new File("/root/Desktop/Year1Assign/");
                 jfc.setCurrentDirectory(lin_dir);
-            }  
+             
             jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int status = jfc.showOpenDialog(jfc); //returns 0 if file selected , and 1 if cancel or exit button pressed!
             
-           //approve / cancel / error
-            if(status==JFileChooser.)
-            {
-                JOptionPane.showMessageDialog(null,"Success","File read Successfully",JOptionPane.INFORMATION_MESSAGE);
-            }          
-            
-            f  = jfc.getSelectedFile();*/
-           
-            f = new File("/root/Desktop/Year1Assign/employees.txt");
+            f  = jfc.getSelectedFile();
             fr = new FileReader(f);
             br = new BufferedReader(fr);
+           //approve / cancel / error
+           /* if(status==JFileChooser.APPROVE_OPTION)
+            {
+                JOptionPane.showMessageDialog(null,"Success","File read Successfully",JOptionPane.INFORMATION_MESSAGE);
+            }*/          
+            
+           
        
        }
        catch(FileNotFoundException e)
        {
            System.out.println(e+" file not found at the specied location");
        }
-      
+    
    }//end of method
    
-   public List<Employee> getList() throws IOException
+   public List<Employee> getList() throws IOException 
    {
        emplist = new ArrayList<>();
        while((lineRead = br.readLine())!=null)
