@@ -4,6 +4,8 @@
 
 HRMS is a java application that teaches students basic java file reading concepts as well as displaying contents of the file inside a graphical user Interface (GUI).
 
+![Sample image](additionalFiles/images/examples.jpg)
+
 ### Features
 
 A detailed description of [features]() is also available.
@@ -36,6 +38,7 @@ Extended Installation instructions can be found [here]().
 In quick short steps :
 
 1. Run the project fro the __MainClass.java__ file.
+2. Alternatively yo can run the __jar__ file inside __dist__ folder, instructions are [here](dist/README.TXT)
 
 
 ### Usage
