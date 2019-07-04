@@ -37,8 +37,8 @@ public class Utilities {
             jfc.setDialogType(JFileChooser.OPEN_DIALOG);
             jfc.setDialogTitle("Open the employee database text file");            
            
-                File lin_dir = new File("/root/Desktop/Year1Assign/");
-                jfc.setCurrentDirectory(lin_dir);
+                File search_dir = new File("additionalFiles/dbFile/"); //searches for file in this directory
+                jfc.setCurrentDirectory(search_dir);
              
             jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int status = jfc.showOpenDialog(jfc); //returns 0 if file selected , and 1 if cancel or exit button pressed!
@@ -113,7 +113,7 @@ public class Utilities {
        
        try
        {
-            BufferedReader brz = new BufferedReader(new FileReader(new File("/root/Desktop/Year1Assign/readme.txt")));
+            BufferedReader brz = new BufferedReader(new FileReader(new File("additionalFiles/readme.txt")));
             readme = new ArrayList<>();
             String line;
             while((line = brz.readLine())!=null)
