@@ -7,7 +7,7 @@ HRMS is a java application that takes advantage of the JAVA IO package to read f
 
 ### Features
 
-A detailed description of [features]() is also available.
+A detailed description of [features](https://github.com/timothymonyake/HRMS/blob/master/additionalFiles/features.md) is also available.
 
 - Object Oriented Programming (OOP)
     - Abstract Class
@@ -33,12 +33,12 @@ A detailed description of [features]() is also available.
 ### Installation
 > This article assumes you have installed **Java** JDK or JRE, if not please search google and get your java environment up and running.
 
-Extended Installation instructions can be found [here]().
+Extended Installation instructions can be found [here](https://github.com/timothymonyake/HRMS/blob/master/additionalFiles/installation.md).
 In quick short steps :
 
-1. Run the project fro the __MainClass.java__ file.
-2. Alternatively yo can run the __jar__ file inside __dist__ folder, instructions are [here](dist/README.TXT)
+1. Run the project from the __MainClass.java__ file.
 
+Should you experience problems installing or using the HRMS,please [open a new issue](https://github.com/timothymonyake/HRMS/issues).
 
 ### Usage
 
@@ -49,7 +49,7 @@ In quick short steps :
 
 
 ### Contributing
-Please see [contributing.md]()
+Please see [contributing.md](https://github.com/timothymonyake/HRMS/blob/master/additionalFiles/contributing.md)
 
 
 ### License
