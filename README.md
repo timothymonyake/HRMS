@@ -1,6 +1,5 @@
 # HUMAN RESOURCE MANAGEMENT SYSTEM (HRMS)
 
-***
 
 HRMS is a java application that teaches students basic java file reading concepts as well as displaying contents of the file inside a graphical user Interface (GUI).
 
